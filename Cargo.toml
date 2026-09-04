@@ -1,0 +1,19 @@
+# Vendored delivery manifest for kellnr 6.6.0 — NEVER compiled anywhere.
+# The binary asset is byte-identical to the upstream release
+# kellnr/kellnr v6.6.0 (kellnr-x86_64-unknown-linux-gnu.zip,
+# sha256 b64c562b0fa9393574c31e6df85072d9af7288a8628801231d406aa68f8344f0).
+# binstall reads pkg-url + disabled-strategies from THIS manifest
+# (--manifest-path), which skips crates.io discovery entirely.
+
+[package]
+name = "kellnr"
+version = "6.6.0"
+edition = "2021"
+description = "Private Cargo crate registry (vendored prebuilt delivery manifest)"
+license = "GPL-3.0"
+
+[package.metadata.binstall]
+pkg-fmt = "zip"
+pkg-url = "https://github.com/teamgbg/kellnr-dist/releases/download/v{ version }/kellnr-{ target }{ archive-suffix }"
+bin-dir = "{ bin }{ binary-ext }"
+disabled-strategies = ["quick-install", "compile"]
